@@ -14,19 +14,6 @@ namespace Gatosyocora.MeshDeleterWithTexture.Views
 
         public void Render(MeshDeleterWithTextureModel model, LocalizedText localizedText, CanvasView canvasView, float toolSizeRaito)
         {
-            // [Edit] : input down event uses on gui, blocks event transfer to unity. 
-            Event e = Event.current;
-            if (e.type == EventType.KeyDown && e.control && e.keyCode == KeyCode.Z)
-            {
-                if (canvasView.undo.canUndo())
-                {
-                    canvasView.UndoPreviewTexture();
-                }
-                e.Use();
-            }
-            // ==============================
-
-
             var width = EditorGUIUtility.currentViewWidth * toolSizeRaito - PADDING_SIZE;
             var widthOption = GUILayout.Width(width);
 
