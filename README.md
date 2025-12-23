@@ -2,9 +2,11 @@
 
 ## 임의로 수정한 점
 
-> 1. 툴 창이 떠 있는 동안 Ctrl + Z 사용 시 유니티 자체에 undo 이벤트가 전달됨을 막음
-> 2. undo 최대 횟수 10 -> 50으로 수정
-> 3. 원본 프로젝트의 PR#48을 반영 (Tri의 모든 버텍스가 선택된 경우에만 제거 대상으로 사용)
+> 1. 기존 Z 였던 Canvas Undo 단축키를 Ctrl + Z 로 변경. 기존에 Ctrl + Z 를 쓰던 모델 Undo는 그린 게 전부 Undo 되어야 진행됨.
+> 2. 창이 떠 있는 동안 Undo 시 유니티 자체에도 Undo 이벤트가 전달됨을 막음
+> 3. Undo 최대 횟수 10 -> 50으로 수정. 이거때문에 램 좀 먹을수도
+> 4. 원본 프로젝트의 [PR#48](https://github.com/gatosyocora/MeshDeleterWithTexture/pull/48)을 Strict Mode 토글 옵션으로 추가하여 반영
+> 5. 한국어 로케일 추가 및 반영
 
 이하는 원본 README
 
