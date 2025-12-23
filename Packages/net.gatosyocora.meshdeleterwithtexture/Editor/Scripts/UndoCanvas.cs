@@ -8,7 +8,7 @@ namespace Gatosyocora.MeshDeleterWithTexture
         private RenderTexture[] undoTextures;
         private int[][] undoBuffers;
         private int undoIndex = 0;
-        private const int MAX_UNDO_COUNT = 10;
+        private const int MAX_UNDO_COUNT = 50;
 
         public UndoCanvas()
         {
@@ -50,4 +50,5 @@ namespace Gatosyocora.MeshDeleterWithTexture
 
         public bool canUndo() => undoIndex > -1;
     }
+
 }
