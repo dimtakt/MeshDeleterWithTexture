@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab925fdc50baf47479726bcae87997f3, type: 3}
+  m_Name: KO
+  m_EditorClassIdentifier: 
+  language: 2
+  rendererLabelText: "\uB80C\uB354\uB7EC"
+  scaleLabelText: "\uD655\uB300"
+  resetButtonText: "\uB9AC\uC14B"
+  importDeleteMaskButtonText: "\uC0AD\uC81C\uC6A9 \uB9C8\uC2A4\uD06C \uC774\uBBF8\uC9C0
+    \uAC00\uC838\uC624\uAE30"
+  exportDeleteMaskButtonText: "\uC0AD\uC81C\uC6A9 \uB9C8\uC2A4\uD06C \uC774\uBBF8\uC9C0
+    \uB0B4\uBCF4\uB0B4\uAE30"
+  dragAndDropDeleteMaskTextureAreaText: "\uC0AD\uC81C\uC6A9 \uB9C8\uC2A4\uD06C \uC774\uBBF8\uC9C0\uB97C
+    \uC5EC\uAE30\uC5D0 \uB4DC\uB798\uADF8&\uB4DC\uB86D\uD574\uB3C4 \uB429\uB2C8\uB2E4."
+  uvMapLineColorLabelText: "UV \uC120 \uC0C9\uC0C1 \uC120\uD0DD"
+  exportUvMapButtonText: "UV \uC774\uBBF8\uC9C0 \uB0B4\uBCF4\uB0B4\uAE30"
+  textureLabelText: "\uD14D\uC2A4\uCCD0(\uB9C8\uD14C\uB9AC\uC5BC) \uC120\uD0DD"
+  toolsTitleText: "\uB3C4\uAD6C"
+  drawTypeLabelText: "\uADF8\uB9AC\uAE30 \uD0C0\uC785"
+  penToolNameText: "\uADF8\uB9AC\uAE30"
+  eraserToolNameText: "\uC9C0\uC6B0\uAE30"
+  selectToolNameText: "\uC120\uD0DD\uD558\uAE30"
+  penColorLabelText: "\uADF8\uB9AC\uAE30 \uC0C9\uC0C1"
+  colorBlackButtonText: Black
+  colorRedButtonText: R
+  colorGreenButtonText: G
+  colorBlueButtonText: B
+  penEraserSizeLabelText: "\uD39C \uC0AC\uC774\uC988"
+  inverseSelectAreaButtonText: "\uC120\uD0DD \uC601\uC5ED \uBC18\uC804"
+  applySelectAreaButtonText: "\uC120\uD0DD \uC601\uC5ED \uBC18\uC601\uD558\uAE30"
+  inverseFillAreaButtonText: "\uADF8\uB9B0 \uC601\uC5ED \uBC18\uC804"
+  clearAllDrawingButtonText: "\uC804\uBD80 \uB418\uB3CC\uB9AC\uAE30"
+  undoDrawingButtonText: "\uB418\uB3CC\uB9AC\uAE30(Undo)"
+  modelInformationTitleText: "\uBAA8\uB378 \uC815\uBCF4"
+  triangleCountLabelText: "\uC0BC\uAC01\uD615 \uAC1C\uC218"
+  outputMeshTitleText: "\uBA54\uC26C \uB0B4\uBCF4\uB0B4\uAE30"
+  saveFolderLabelText: "\uC800\uC7A5\uD560 \uD3F4\uB354"
+  selectFolderButtonText: "\uD3F4\uB354 \uC120\uD0DD..."
+  outputFileNameLabelText: "\uD30C\uC77C\uBA85"
+  extraOptionsLabelText: "\uCD94\uAC00 \uC124\uC815"
+  isContainsAllVertText: "\uC5C4\uACA9 \uBAA8\uB4DC"
+  isContainsAllVertTooltipText: "\uC0BC\uAC01\uD615\uC758 \uC138 \uC815\uC810\uC774
+    \uBAA8\uB450 \uC120\uD0DD\uB418\uC5B4 \uC788\uB294 \uACBD\uC6B0\uC5D0\uB9CC \uC0AD\uC81C\uD569\uB2C8\uB2E4."
+  revertMeshToPrefabButtonText: "\uD504\uB9AC\uD339\uC73C\uB85C \uBA54\uC26C \uB418\uB3CC\uB9AC\uAE30"
+  revertMeshToPreviouslyButtonText: "\uC9C1\uC804\uC73C\uB85C \uBA54\uC26C \uB418\uB3CC\uB9AC\uAE30"
+  deleteMeshButtonText: "\uC120\uD0DD \uC601\uC5ED \uBA54\uC26C \uC0AD\uC81C\uD558\uAE30!"
+  androidNotSupportMessageText: "BuildTarget\uC774 'Android'\uC77C \uB54C\uB294 \uC0AC\uC6A9\uC774
+    \uBD88\uAC00\uB2A5\uD569\uB2C8\uB2E4.\nBuildTarget\uC744 'PC'\uB85C \uBC14\uAFD4\uC8FC\uC138\uC694!"
+  errorDialogTitleText: "\uC5D0\uB7EC\uAC00 \uBC1C\uC0DD\uD588\uC2B5\uB2C8\uB2E4."
+  notFoundVerticesExceptionDialogMessageText: "\uC0AD\uC81C\uD560 \uC601\uC5ED\uC774
+    \uC5C6\uC2B5\uB2C8\uB2E4."
+  errorDialogOkText: "\uD655\uC778"
+  helpButtonText: "\uB3C4\uC6C0\uB9D0"

@@ -48,6 +48,10 @@ namespace Gatosyocora.MeshDeleterWithTexture.Models
         public string selectFolderButtonText = "Select Folder";
         public string outputFileNameLabelText = "Name";
 
+        public string extraOptionsLabelText = "Extra Options";
+        public string isContainsAllVertText = "Strict Deletion";
+        public string isContainsAllVertTooltipText = "Deletes only when all three vertices of the triangle are selected.";
+
         public string revertMeshToPrefabButtonText = "Revert Mesh to Prefab";
         public string revertMeshToPreviouslyButtonText = "Revert Mesh to previously";
 

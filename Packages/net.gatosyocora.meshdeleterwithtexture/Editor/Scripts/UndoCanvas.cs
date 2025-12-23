@@ -50,5 +50,4 @@ namespace Gatosyocora.MeshDeleterWithTexture
 
         public bool canUndo() => undoIndex > -1;
     }
-
 }

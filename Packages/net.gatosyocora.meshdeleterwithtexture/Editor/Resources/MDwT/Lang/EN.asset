@@ -44,6 +44,10 @@ MonoBehaviour:
   saveFolderLabelText: SaveFolder
   selectFolderButtonText: Select Folder
   outputFileNameLabelText: Name
+  extraOptionsLabelText: Extra Options
+  isContainsAllVertText: Strict Deletion
+  isContainsAllVertTooltipText: Deletes only when all three vertices of the triangle
+    are selected.
   revertMeshToPrefabButtonText: Revert Mesh to Prefab
   revertMeshToPreviouslyButtonText: Revert Mesh to previously
   deleteMeshButtonText: Delete Mesh
@@ -54,3 +58,4 @@ MonoBehaviour:
   errorDialogTitleText: Error has occurred
   notFoundVerticesExceptionDialogMessageText: Not found vertices to delete.
   errorDialogOkText: OK
+  helpButtonText: Help

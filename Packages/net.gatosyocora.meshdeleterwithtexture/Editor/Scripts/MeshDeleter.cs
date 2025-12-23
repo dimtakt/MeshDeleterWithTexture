@@ -1,4 +1,4 @@
-using Gatosyocora.MeshDeleterWithTexture.Models;
+﻿using Gatosyocora.MeshDeleterWithTexture.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,10 +11,10 @@ namespace Gatosyocora.MeshDeleterWithTexture
     {
         private const int DELETE = -1;
 
-        public static (Mesh, bool[]) RemoveTriangles(Mesh mesh, bool[] deletePos, Vector2Int textureSize, List<int> materialIndexList, bool showProgressBar = true)
+        public static (Mesh, bool[]) RemoveTriangles(Mesh mesh, bool[] deletePos, Vector2Int textureSize, List<int> materialIndexList, bool isStrictMode, bool showProgressBar = true)
         {
             // 削除する頂点のリストを取得
-            var deleteIndexList = GetDeleteVertexIndices(mesh.uv.ToList(), mesh.triangles, deletePos, textureSize);
+            var deleteIndexList = GetDeleteVertexIndices(mesh.uv.ToList(), mesh.triangles, deletePos, textureSize, isStrictMode);
 
             if (!deleteIndexList.Any())
             {
@@ -78,7 +78,7 @@ namespace Gatosyocora.MeshDeleterWithTexture
         /// <param name="isDeletePositions">削除するかどうか(テクスチャの幅×高さのサイズ)</param>
         /// <param name="textureSize">テクスチャのサイズ</param>
         /// <returns>削除する頂点のindexのList</returns>
-        private static List<int> GetDeleteVertexIndices(List<Vector2> uvs, int[] triangles, bool[] isDeletePositions, Vector2Int textureSize)
+        private static List<int> GetDeleteVertexIndices(List<Vector2> uvs, int[] triangles, bool[] isDeletePositions, Vector2Int textureSize, bool isStrictMode)
         {
             if (isDeletePositions.Length != textureSize.x * textureSize.y)
             {
@@ -105,31 +105,34 @@ namespace Gatosyocora.MeshDeleterWithTexture
                 }
             }
 
-            var preservedIndexList = new SortedSet<int>();
-
-            for (int i = 0; i < triangles.Length; i += 3)
+            if (isStrictMode)
             {
-                var t0 = triangles[i];
-                var t1 = triangles[i + 1];
-                var t2 = triangles[i + 2];
+                var preservedIndexList = new SortedSet<int>();
 
-                // if any of the vertices are not in the delete list, preserve the triangle's vertices
-                // 削除リストにない頂点がある場合、その三角形の頂点を保持します
-                if (!deleteIndexList.Contains(t0) ||
-                    !deleteIndexList.Contains(t1) ||
-                    !deleteIndexList.Contains(t2))
+                for (int i = 0; i < triangles.Length; i += 3)
                 {
-                    preservedIndexList.Add(t0);
-                    preservedIndexList.Add(t1);
-                    preservedIndexList.Add(t2);
-                }
-            }
+                    var t0 = triangles[i];
+                    var t1 = triangles[i + 1];
+                    var t2 = triangles[i + 2];
 
-            // Remove the preserved indices from the delete list
-            // 保存されたindexを削除リストから削除します
-            foreach (var index in preservedIndexList)
-            {
-                deleteIndexList.Remove(index);
+                    // if any of the vertices are not in the delete list, preserve the triangle's vertices
+                    // 削除リストにない頂点がある場合、その三角形の頂点を保持します
+                    if (!deleteIndexList.Contains(t0) ||
+                        !deleteIndexList.Contains(t1) ||
+                        !deleteIndexList.Contains(t2))
+                    {
+                        preservedIndexList.Add(t0);
+                        preservedIndexList.Add(t1);
+                        preservedIndexList.Add(t2);
+                    }
+                }
+
+                // Remove the preserved indices from the delete list
+                // 保存されたindexを削除リストから削除します
+                foreach (var index in preservedIndexList)
+                {
+                    deleteIndexList.Remove(index);
+                }
             }
 
             return deleteIndexList.ToList();
@@ -282,4 +285,3 @@ namespace Gatosyocora.MeshDeleterWithTexture
 
     }
 }
-

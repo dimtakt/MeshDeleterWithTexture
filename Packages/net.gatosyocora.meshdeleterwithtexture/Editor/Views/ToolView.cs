@@ -1,4 +1,4 @@
-using Gatosyocora.MeshDeleterWithTexture.Models;
+﻿using Gatosyocora.MeshDeleterWithTexture.Models;
 using System;
 using UnityEditor;
 using UnityEngine;
@@ -169,6 +169,12 @@ namespace Gatosyocora.MeshDeleterWithTexture.Views
 
                 OutputMeshGUI(model, localizedText, widthOption);
 
+                GUILayout.Space(20);
+
+                SelectOptionGUI(localizedText, canvasView, widthOption);
+
+
+
                 GUILayout.Space(50);
 
                 using (new GatoGUILayout.RightAlignedScope(widthOption))
@@ -272,5 +278,20 @@ namespace Gatosyocora.MeshDeleterWithTexture.Views
                 model.meshName = EditorGUILayout.TextField(localizedText.Data.outputFileNameLabelText, model.meshName, options);
             }
         }
+
+        private void SelectOptionGUI(LocalizedText localizedText, CanvasView canvasView, params GUILayoutOption[] options)
+        {
+            using (new GatoGUILayout.TitleScope(localizedText.Data.extraOptionsLabelText, options))
+            using (new EditorGUI.IndentLevelScope())
+            {
+                bool newStrictMode = EditorGUILayout.Toggle(
+                    new GUIContent(localizedText.Data.isContainsAllVertText, localizedText.Data.isContainsAllVertTooltipText),
+                    canvasView.StrictMode
+                );
+
+                canvasView.StrictMode = newStrictMode;
+            }
+        }
+
     }
 }

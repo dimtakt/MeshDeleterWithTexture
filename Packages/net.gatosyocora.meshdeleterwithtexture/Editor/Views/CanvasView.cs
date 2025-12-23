@@ -107,6 +107,17 @@ namespace Gatosyocora.MeshDeleterWithTexture.Views
             }
         }
 
+        private bool _isStrictMode;
+        public bool StrictMode
+        {
+            get => _isStrictMode;
+            set
+            {
+                _isStrictMode = value;
+            }
+        }
+
+
         public UndoCanvas undo;
         public UVMapCanvas uvMap;
         public DeleteMaskCanvas deleteMask;

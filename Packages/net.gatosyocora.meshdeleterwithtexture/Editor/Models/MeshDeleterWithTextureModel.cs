@@ -68,7 +68,7 @@ namespace Gatosyocora.MeshDeleterWithTexture.Models
         /// <param name="deleteTexPos"></param>
         /// <param name="texture"></param>
         /// <param name="subMeshIndexInDeletedVertex"></param>
-        private bool DeleteMesh(Renderer renderer, bool[] deletePos, MaterialInfo matInfo)
+        private bool DeleteMesh(Renderer renderer, bool[] deletePos, MaterialInfo matInfo, bool isStrictMode)
         {
             var texture = matInfo.Texture;
             var materialIndexList = matInfo.MaterialSlotIndices;
@@ -76,7 +76,7 @@ namespace Gatosyocora.MeshDeleterWithTexture.Models
             var mesh = RendererUtility.GetMesh(renderer);
             var materials = renderer.sharedMaterials.ToArray();
             var textureSize = new Vector2Int(texture.width, texture.height);
-            var (deletedMesh, hadDeletedSubMeshes) = MeshDeleter.RemoveTriangles(mesh, deletePos, textureSize, materialIndexList);
+            var (deletedMesh, hadDeletedSubMeshes) = MeshDeleter.RemoveTriangles(mesh, deletePos, textureSize, materialIndexList, isStrictMode);
 
             if (meshName == "") meshName = mesh.name + MESH_SUFFIX;
             AssetDatabase.CreateAsset(deletedMesh, AssetDatabase.GenerateUniqueAssetPath(Path.Combine(saveFolder, $"{meshName}.asset")));
@@ -234,7 +234,7 @@ namespace Gatosyocora.MeshDeleterWithTexture.Models
             SetFbxReadWriteEnabledIfNeeded(renderer);
 
             var deletePos = canvasView.GetDeleteData();
-            var hadDeletedSubMesh = DeleteMesh(renderer, deletePos, matInfos[materialInfoIndex]);
+            var hadDeletedSubMesh = DeleteMesh(renderer, deletePos, matInfos[materialInfoIndex], canvasView.StrictMode);
 
             Initialize(canvasView, hadDeletedSubMesh);
         }

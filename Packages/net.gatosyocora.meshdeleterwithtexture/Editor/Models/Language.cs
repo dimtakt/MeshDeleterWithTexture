@@ -2,6 +2,6 @@
 {
     public enum Language
     {
-        EN, JA
+        EN, JA, KO
     }
 }

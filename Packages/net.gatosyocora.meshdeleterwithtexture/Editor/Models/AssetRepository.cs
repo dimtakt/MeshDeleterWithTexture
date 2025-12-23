@@ -25,7 +25,8 @@ namespace Gatosyocora.MeshDeleterWithTexture.Models
         public static LanguagePack[] LoadLanguagePacks()
             => new LanguagePack[] {
                 Resources.Load<LanguagePack>(Path.Combine(MESHDELETER_LANGUAGE_PACK_FOLDER_PATH, "EN")),
-                Resources.Load<LanguagePack>(Path.Combine(MESHDELETER_LANGUAGE_PACK_FOLDER_PATH, "JA"))
+                Resources.Load<LanguagePack>(Path.Combine(MESHDELETER_LANGUAGE_PACK_FOLDER_PATH, "JA")),
+                Resources.Load<LanguagePack>(Path.Combine(MESHDELETER_LANGUAGE_PACK_FOLDER_PATH, "KO"))
             };
 
         public static Texture2D LoadSelectTextureAreaPatternTexture()
